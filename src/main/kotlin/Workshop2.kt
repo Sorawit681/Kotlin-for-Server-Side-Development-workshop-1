@@ -81,11 +81,13 @@ fun main() {
     println("\nกลุ่มที่ 3: สินค้าราคา 10,000 บาทขึ้นไป")
     groupAbove10000.forEach { println(it) }
 
+}
+fun calculateTotalElectronicsPriceOver500(products: List<Product>): Double {
+    return products
+        .filter { it.category.trim() == "Electronics" && it.price > 500 }
+        .sumOf { it.price }
+}
 
-
-
-
-
-
-
+fun countElectronicsOver500(products: List<Product>): Int {
+    return products.count { it.category.trim() == "Electronics" && it.price > 500 }
 }
